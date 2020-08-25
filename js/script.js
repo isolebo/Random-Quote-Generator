@@ -33,17 +33,12 @@ const quotes = [
   }
 ]
 
+
 /***
  * `getRandomQuote` function
 ***/
-// function getRandomQuote(){
-//   
-    function getRandomQuote(){//
-    
-      const randomQuote = Math.floor(Math.random() * (quotes.length)); //generates a random  number of quote between the first 
-                                                                       //and last element
-      return quotes[randomQuote]; // returns the quotes in random as an object
-    }
+
+
 
 /***
  * `printQuote` function
@@ -56,4 +51,5 @@ const quotes = [
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-//document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", printQuote, false);
+console.log('test');
