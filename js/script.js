@@ -12,7 +12,7 @@ project 1 - A Random Quote Generator
 ***/
 const quotes = [
   { quote : "The greatest glory lies not in  never falling, but in rising every time we fall",
-    source: "Nelson Mandel"
+    source: "Nelson Mandela"
   },
   { quote : "The only impossible journey is the one you never begin",
     source: "Tony Robbins"
@@ -25,33 +25,47 @@ const quotes = [
   },
   { quote : "Life moves pretty fast. if you don't and look around once ina while, you could miss it",
     source: "Ferris Bueller",
-    citation: "Ferris Bueller's Day Off"
+    citation: "Ferris Bueller's Day Off",
+    year:     "1986"
   },
   { quote : "What we do in life echoes in eternity",
-    source: "Maximus,Gladiator",
-    year: 2000
+    source: "Maximus, Gladiator",
+    year: "2000"
   }
 ]
 
 /***
  * `getRandomQuote` function
 ***/
-// function getRandomQuote(){
-//   
-    function getRandomQuote(){//
+
+    function getRandomQuote(){ //this function gets the quote from the object array
     
-      const randomQuote = Math.floor(Math.random() * (quotes.length)); //generates a random  number of quote between the first 
+      let randomQuote = Math.floor(Math.random() * (quotes.length)); //generates a random  number of quote between the first 
                                                                        //and last element
       return quotes[randomQuote]; // returns the quotes in random as an object
     }
-
+    console.log(quotes);  //prints to the console the array off quotes
+    
+    
 /***
  * `printQuote` function
 ***/
+    function printQuote(){ //this function pints the quotes
+        let printQuote = getRandomQuote();//it sets the variable to call the getRandomQuote function
+        let html = " ";
+        var message = "<p class = quote "> + quotes.quote + "</p>" + "<p class ='source'" + quotes.source + "</p";
+        document.getElementById('quote-box').innerHTML = message;
+        html += '<p class = "quote">' + printQuote.quote + '</p>';
+        html += '<p class = "source">' + printQuote.source + '</p>';
+
+
+    }
+    printQuote();//calls the function and outputs the quotes 
+    console.log(printQuote());
 
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-//document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", printQuote, false);
