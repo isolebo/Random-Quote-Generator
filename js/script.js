@@ -45,8 +45,6 @@ const quotes = [
       return quotes[randomQuote]; // returns the quotes in random as an object
     }
     console.log(quotes);  //prints to the console the array off quotes
-    
-    
 /***
  * `printQuote` function
 ***/
@@ -55,17 +53,21 @@ const quotes = [
         let html = " ";
         var message = "<p class = quote "> + quotes.quote + "</p>" + "<p class ='source'" + quotes.source + "</p";
         document.getElementById('quote-box').innerHTML = message;
-        html += '<p class = "quote">' + printQuote.quote + '</p>';
-        html += '<p class = "source">' + printQuote.source + '</p>';
+        html += '<p class = "quote">' + printQuote.quote + '</p>';//the quote printout
+        html += '<p class = "source">' + printQuote.source + '</p>'//the source printout
 
-
+        if("citation" in printQuote ){//checks to see if  the object has a year, and it prints to the page
+          html += '<span class = "citation" >' + printQuote.citation + '</span>' + '</p>';
+      }
+           if("year" in printQuote ){ //checks to see if  the object has a year, and it prints to the page
+           html += '<span class = "year" >' + printQuote.year+ '</span>' + '</p>';
+      }
+            document.getElementById("quote-box").innerHTML=html;
     }
     printQuote();//calls the function and outputs the quotes 
     console.log(printQuote());
-
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
-
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
