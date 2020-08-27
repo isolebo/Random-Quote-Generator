@@ -3,9 +3,6 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 /*** 
  * `quotes` array 
@@ -48,16 +45,16 @@ const quotes = [
 /***
  * `printQuote` function
 ***/
-    function printQuote(){ //this function pints the quotes
+    function printQuote(){ //this function pints the quotes according to certain conditions
         let printQuote = getRandomQuote();//it sets the variable to call the getRandomQuote function
-        let html = " ";
+        let html = " ";//sets the html variAble to empty strings initially
         var message = "<p class = quote "> + quotes.quote + "</p>" + "<p class ='source'" + quotes.source + "</p";
         document.getElementById('quote-box').innerHTML = message;
         html += '<p class = "quote">' + printQuote.quote + '</p>';//the quote printout
         html += '<p class = "source">' + printQuote.source + '</p>'//the source printout
 
         if("citation" in printQuote ){//checks to see if  the object has a year, and it prints to the page
-          html += '<span class = "citation" >' + printQuote.citation + '</span>' + '</p>';
+          html += '<span class = "citation" >' + printQuote.citation  + '</p>';
       }
            if("year" in printQuote ){ //checks to see if  the object has a year, and it prints to the page
            html += '<span class = "year" >' + printQuote.year+ '</span>' + '</p>';
@@ -66,8 +63,10 @@ const quotes = [
     }
     printQuote();//calls the function and outputs the quotes 
     console.log(printQuote());
+    
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
+//when the button ic clicked a different quote pops up
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
