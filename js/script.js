@@ -42,6 +42,9 @@ const quotes = [
       return quotes[randomQuote]; // returns the quotes in random as an object
     }
     console.log(quotes);  //prints to the console the array off quotes
+
+
+
 /***
  * `printQuote` function
 ***/
@@ -59,17 +62,20 @@ const quotes = [
            if("year" in printQuote ){ //checks to see if  the object has a year, and it prints to the page
            html += '<span class = "year" >' + printQuote.year+ '</span>' + '</p>';
       }
+      
             document.getElementById("quote-box").innerHTML=html;
     }
 
-    function change(){ //function to refrsh the quotes
+    
+
+    function changeQuote(){ //function to refrsh the quotes
           document.location.reload();
 
     }
+
     printQuote();//calls the function and outputs the quotes 
     console.log(printQuote());
-
-    setInterval(change, 10000);//setInterval passes a function as a parameter to refresh the quotes every 10sec
+    setInterval(changeQuote, 10000);//setInterval passes a function as a parameter to refresh the quotes every 10sec
     
 /***
  * click event listener for the print quote button
