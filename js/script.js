@@ -18,7 +18,6 @@ let quotes = [
     source: "Akecheta",
     citation: "Westworld: Season 2",
     year: "2016"
-
   },
   { quote : "Whoever is happy will make others happy too",
     source: "Anne Frank"
@@ -37,16 +36,14 @@ let quotes = [
   },
   { quote: "When you play the game of thrones, you win or die",
     source: "Cersei Lannister",
-    citation: "Game of Thrones: Season 1; Episode 1",
+    citation: "Game of Thrones: Season 1: Episode 1",
     year: "2011"
-
   }
 ]
 
 /***
  * `getRandomQuote` function
 ***/
-
     function getRandomQuote(){ //this function gets the quote from the object array
     
       let randomQuote = Math.floor(Math.random() * (quotes.length)); //generates a random  number of quote between the first 
@@ -54,8 +51,6 @@ let quotes = [
       return quotes[randomQuote]; // returns the quotes in random as an object
     }
     console.log(quotes);  //prints to the console the array off quotes
-
-
 
 /***
  * `printQuote` function
@@ -74,7 +69,7 @@ let quotes = [
            html += '<span class = "year" >' + newQuote.year + '</span>'+ '</p>';
       }
       
-            document.getElementById("quote-box").innerHTML=html;
+            document.getElementById("quote-box").innerHTML = html;
     }
 
 
@@ -84,7 +79,6 @@ let quotes = [
       var color3 = Math.floor(Math.random() * 256);
       var randomColor = "rgb(" + color1 + "," + color2 + "," + color3 + ")";
       console.log(randomColor);
-    
         document.body.style.background = randomColor;//applies random color to background
       }
   
@@ -93,7 +87,7 @@ let quotes = [
           document.location.reload();
 
     }
-    getRandomColor();//calls the function
+    getRandomColor();//calls the function to display random background colors
     printQuote();//calls the function and outputs the quotes 
     console.log(printQuote());
     setInterval(changeQuote, 10000);//setInterval passes a function as a parameter to refresh the quotes every 10sec
